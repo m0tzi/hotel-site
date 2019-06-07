@@ -25,17 +25,26 @@
         padding: .7rem 2rem;
         border-radius: 100px;
         width: 90%;
-        margin-right: -3.5rem;
+        margin-right: -3rem;
 
         &:focus{
             outline: none;
-            width: 100%;
+            width: 100%;    
             background-color: var(--color-grey-light-3);
             transition: all .2s;
 
         }
- 
+        
+        &::webkit-input-placeholder{
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
     }
+
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
+    }
+
 
     &__button{
         border: none;
@@ -54,26 +63,65 @@
     &__icon{
         height: 2rem;
         width: 2rem;
+
+        fill: var(--color-grey-dark-3)
     }
 }
 
 /*USER NAVIGATION*/
 
 .user-nav{
-    background-color: greenyellow;
 
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    // Seleect all direct Childs in Usernav
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+    }
+    // Same Hovering
+    & > *:hover{
+        background-color: var(--color-grey-light-2);
+    }
 
     &__icon-box{
-
+        display: flex;
+        align-items: center;
+        position: relative;
     }
 
     &__icon{
         height: 2.25rem;
         width: 2.25rem;
+
+        fill: var(--color-grey-dark-2);
+
     }
 
     &__notification{
+        font-size: .8rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary-light);
+        color: #fff;
 
+        // Position Notifications over the Icons
+        position: absolute;
+        top: 20%;
+        left: 19%;
+
+        // Center the Text Widthin the Iconboxes
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__user{
